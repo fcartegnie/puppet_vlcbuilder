@@ -11,6 +11,8 @@ node default {
       require => [Class["vlc::clone"], Class["mingw64"], Class["vlc::builddeps::win32"]]
     }
 
+    class { 'vlc::deploy::win': }
+
   } else {
     fail("Unsupported operating system or arch")
   }
