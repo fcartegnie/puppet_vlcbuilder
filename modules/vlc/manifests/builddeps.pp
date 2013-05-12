@@ -1,6 +1,8 @@
 class vlc::builddeps {
   include apt
 
+  Exec { timeout => '600' }
+  
   apt::builddep { "vlc": }
 
   exec { "addi386arch":
