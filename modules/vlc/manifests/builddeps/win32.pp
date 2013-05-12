@@ -1,9 +1,4 @@
-class vlc::builddeps {
-  include apt
-
-  Exec { timeout => '600' }
-  
-  apt::builddep { "vlc": }
+class vlc::builddeps::win32 inherits vlc::builddeps::common {
 
   exec { "addi386arch":
     command => "dpkg --add-architecture i386",

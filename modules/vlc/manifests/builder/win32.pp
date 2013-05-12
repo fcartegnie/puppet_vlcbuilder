@@ -6,7 +6,6 @@ class vlc::builder::win32 inherits vlc::params {
     ensure  => "directory",
     owner   => $user,
     group   => $group,
-#    require => Exec["repoclone"],
   }
 
   exec { "prebuiltbootstrap":
