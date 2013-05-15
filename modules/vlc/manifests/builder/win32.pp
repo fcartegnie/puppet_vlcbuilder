@@ -15,6 +15,7 @@ class vlc::builder::win32 inherits vlc::params {
     user    => $user,
     group   => $group,
     require => File["contribdir"],
+    logoutput => 'on_failure',
   }
 
   exec { "prebuilt":
@@ -25,7 +26,7 @@ class vlc::builder::win32 inherits vlc::params {
     user      => $user,
     group     => $group,
     require   => Exec["prebuiltbootstrap"],
-    logoutput => true
+    logoutput => 'on_failure',
   }
 
   file { [
@@ -48,7 +49,7 @@ class vlc::builder::win32 inherits vlc::params {
     cwd       => "${basedir}/vlc",
     path      => "/usr/bin:/bin",
     creates   => "${basedir}/vlc/configure",
-    logoutput => true,
+    logoutput => 'on_failure',
     user      => $user,
     group     => $group,
     require   => Exec["prebuilt"]
@@ -58,7 +59,7 @@ class vlc::builder::win32 inherits vlc::params {
     command   => "${basedir}/vlc/extras/package/win32/configure.sh --host=${triplet}",
     cwd       => "${basedir}/vlc/win32",
     path      => "/usr/bin:/bin",
-    logoutput => true,
+    logoutput => 'on_failure',
     user      => $user,
     group     => $group,
     require   => Exec["bootstrap"]
