@@ -5,7 +5,9 @@ node default {
 
     class { 'vlc::builddeps::win32': }
 
-    class { 'vlc::clone': }
+    class { 'vlc::clone':
+      shallow => true
+    }
 
     class { 'vlc::builder::win32':
       require => [Class["vlc::clone"], Class["mingw64"], Class["vlc::builddeps::win32"]]
