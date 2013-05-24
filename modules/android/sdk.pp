@@ -1,8 +1,8 @@
 class android::sdk(
-  $user,
-  $group,
-  $basedir
-) {
+  $user = $android::params::user,
+  $group = $android::params::group,
+  $basedir = $android::params::basedir, 
+) inherits android::params {
 
   $url = "http://developer.android.com/sdk/index.html"
 
