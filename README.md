@@ -14,7 +14,7 @@ Usage
 Add custom params to manifests/site.pp if needed. (defaults to vagrant environment)
 See modules/vlc/manifests/params.pp for values to override.
 
-    class { 'vlc::params': user => 'foobar', group=>'users' }
+    class { 'vlc': (....) user => 'foobar', group=>'users' }
 
 On the Debian host, install puppet and 
 

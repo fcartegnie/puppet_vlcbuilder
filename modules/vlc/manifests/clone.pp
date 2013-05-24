@@ -1,7 +1,10 @@
 
 class vlc::clone(
   $shallow = false,
-  $repo = "git://git.videolan.org/vlc.git"
+  $repo = "git://git.videolan.org/vlc.git",
+  $user = $vlc::params::user,
+  $group = $vlc::params::group,
+  $basedir = $vlc::params::basedir, 
 ) inherits vlc::params {
 
   package { "git":
@@ -17,7 +20,7 @@ class vlc::clone(
     creates   => "${basedir}/vlc",
     user      => $user,
     group     => $group,
-    logoutput => true
+    logoutput => 'on_failure',
   }
 
 }

@@ -1,5 +1,9 @@
 
-class vlc::builder::win32 inherits vlc::params {
+class vlc::builder::win32 (
+  $user = vlc::params::user,
+  $group = vlc::params::group,
+  $basedir = vlc::params::basedir,
+) inherits vlc::params {
 
   file { "${basedir}/vlc/contrib/win32":
     alias   => "contribdir",
