@@ -1,5 +1,8 @@
 node default {
 
+  # Override this global timeout depending on host speed/bandwidth
+  Exec { timeout => '600' }
+
   if $hardwaremodel == "x86_64" and $operatingsystem == "Debian" {
 
     class { 'vlc':
