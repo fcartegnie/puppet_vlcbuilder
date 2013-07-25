@@ -9,7 +9,7 @@ Designed to be integrated into a Vagrant image. (see vlc::params)
 
 Usage
 ===========
-    git clone git clone --recursive https://github.com/fcartegnie/puppet_vlcbuilder.git
+    git clone --recursive https://github.com/fcartegnie/puppet_vlcbuilder.git
 
 Add custom params to manifests/site.pp if needed. (defaults to vagrant environment)
 See modules/vlc/manifests/params.pp for values to override.
@@ -19,3 +19,5 @@ See modules/vlc/manifests/params.pp for values to override.
 On the Debian host, install puppet and 
 
     sudo puppet apply manifests/site.pp --modulepath=clonedir/modules/
+
+Don't forget to set "clonedir" to the real directory :)
