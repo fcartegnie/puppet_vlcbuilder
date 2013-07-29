@@ -21,3 +21,4 @@ On the Debian host, install puppet and
     sudo puppet apply manifests/site.pp --modulepath=clonedir/modules/
 
 Don't forget to set "clonedir" to the real directory :)
+

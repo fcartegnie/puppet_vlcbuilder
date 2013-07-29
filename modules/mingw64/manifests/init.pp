@@ -9,13 +9,13 @@ class mingw64 {
   }
 
   apt::force { "mingw-w64-tools":
-    release => "experimental",
-    require => Apt::Source["debian_experimental"],
+    release => "unstable",
+    require => Apt::Source["debian_unstable"],
   }
 
-  apt::source { "debian_experimental":
+  apt::source { "debian_unstable":
     location          => "http://debian.proxad.net/debian",
-    release           => "experimental",
+    release           => "unstable",
     repos             => "main",
     required_packages => "debian-archive-keyring",
     key               => "46925553",
