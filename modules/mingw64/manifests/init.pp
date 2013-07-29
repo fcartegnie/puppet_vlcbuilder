@@ -20,7 +20,7 @@ class mingw64 {
     required_packages => "debian-archive-keyring",
     key               => "46925553",
     key_server        => "subkeys.pgp.net",
-    pin               => "510",
+    pin               => "1000",
     include_src       => false,
   }
 
