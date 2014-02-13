@@ -18,7 +18,8 @@ See modules/vlc/manifests/params.pp for values to override.
 
 On the Debian host, install puppet and 
 
-    sudo puppet apply manifests/site.pp --modulepath=clonedir/modules/
+    cd clonedir
+    sudo puppet apply manifests/site.pp --modulepath=modules/
 
 Don't forget to set "clonedir" to the real directory :)
 
