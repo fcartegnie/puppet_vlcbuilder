@@ -39,6 +39,7 @@ class vlc::builder::win32 (
     "${basedir}/vlc/contrib/${triplet}/bin/rcc"]:
     ensure  => "absent",
     require => Exec["prebuilt"],
+    before  => Exec["bootstrap"],
   }
 
   file { "${basedir}/vlc/win32":
