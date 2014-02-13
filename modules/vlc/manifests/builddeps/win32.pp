@@ -12,7 +12,7 @@ class vlc::builddeps::win32 inherits vlc::builddeps::common {
     require => Exec["addi386arch"],
   }
 
-  package { "lua5.2:i386":
+  package { ["lua5.2:i386", "subversion"]:
     ensure  => "latest",
     require => [Exec["addi386arch"], Exec["apt-update"]],
   }
