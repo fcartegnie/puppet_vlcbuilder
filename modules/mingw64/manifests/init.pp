@@ -1,10 +1,9 @@
-
 class mingw64 {
   include apt
   $mingw = ["gcc-mingw-w64-i686", "g++-mingw-w64-i686"]
 
-  package { $mingw:
-    ensure  => "latest",
+  apt::force { $mingw:
+    release => "unstable",
     require => Apt::Force["mingw-w64-tools"],
   }
 
@@ -20,7 +19,7 @@ class mingw64 {
     required_packages => "debian-archive-keyring",
     key               => "46925553",
     key_server        => "subkeys.pgp.net",
-    pin               => "1000",
+    pin               => "1",
     include_src       => false,
   }
 
